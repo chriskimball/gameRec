@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="Z6pn2S-NzWUDgQahCCsV" name="Page-1">
-        <mxGraphModel dx="1924" dy="1618" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="2164" dy="1890" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -1009,6 +1009,9 @@
                 </mxCell>
                 <mxCell id="230" value="&lt;h1&gt;User Story6&lt;/h1&gt;&lt;div&gt;I AM someone who has never played games&lt;/div&gt;&lt;div&gt;SO I WANT TO&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span&gt;SO I CAN&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="700" y="-930" width="400" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="231" value="&lt;h1&gt;MVP Focus on reviews or wishlist&lt;/h1&gt;&lt;div&gt;Seed specific games - Dont allow users to create their own games&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Googleanalytics could be a good outside&lt;/div&gt;&lt;div&gt;logging technologies&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="-530" width="400" height="170" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
