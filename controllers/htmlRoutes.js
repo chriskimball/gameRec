@@ -74,10 +74,10 @@ router.get('/games', withAuth, (req,res) => {
       ],
     });
 
-    const game = gameData.get({ plain: true });
+    const games = gameData.map((game) => game.get({plain:true}))
 
     res.render('games', {
-      ...game,
+      ...games,
       logged_in: true
     });
   } catch (err) {
