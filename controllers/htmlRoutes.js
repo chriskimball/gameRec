@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// '/' - Home page - basic info about the app
 router.get('/', async (req, res) => {
   try {
 
@@ -15,6 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// '/profile' - Where the user sees their profile information and games in their collection
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -33,6 +35,17 @@ router.get('/profile', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('login');
 });
 
 router.get('/login', (req, res) => {
