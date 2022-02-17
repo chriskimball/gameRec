@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Game , UserGame, Review} = require('../models');
 const withAuth = require('../utils/auth');
 
 // '/' - Home page - basic info about the app
@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// TODO:
 // '/profile' - Where the user sees their profile information and games in their collection
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -23,7 +24,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      // include: [{ model: Project }],
+      include: [{ model: Game, through: UserGame }],
     });
 
     const user = userData.get({ plain: true });
@@ -59,5 +60,36 @@ router.get('/register', (req, res) => {
 
   res.render('register');
 });
+
+// TODO:
+// '/games' - Where the user sees all games in the library
+router.get('/games', withAuth, (req,res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const gameData = await Game.findAll({
+      include: [
+        {
+          model: Review,
+        },
+      ],
+    });
+
+    const game = gameData.get({ plain: true });
+
+    res.render('games', {
+      ...game,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+
+// TODO:
+// '/games/:id' - Where the user can see a specific game
+router.get('/games/:id', withAuth, (req,res) => {
+
+})
 
 module.exports = router;
