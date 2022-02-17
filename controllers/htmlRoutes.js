@@ -48,14 +48,16 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/login', (req, res) => {
+// '/register' - Where the user creates an account
+// register.handlebars
+router.get('/register', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
   }
 
-  res.render('login');
+  res.render('register');
 });
 
 module.exports = router;
