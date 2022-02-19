@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Review, User, Game } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// '/api/review/:id' - Create review for specific game
+//'/api/review/:id' - Create review for specific game
 router.post('/:id', withAuth, async (req, res) => {
     try {
     //   const userData = await User.create(req.body);

@@ -1,17 +1,15 @@
 const router = require('express').Router();
-const { User, Game , UserGame, Review} = require('../models');
+const { User, Game, UserGame, Review } = require('../models');
 const withAuth = require('../utils/auth');
 
 // TODO: Need to validate this route works
 // '/' - Home page - basic info about the app
 router.get('/', async (req, res) => {
   try {
-
     // Pass serialized data and session flag into template
     res.render('homepage', {
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
     });
-
   } catch (err) {
     res.status(500).json(err);
   }
@@ -32,7 +30,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -65,46 +63,42 @@ router.get('/signup', (req, res) => {
 
 // TODO: Need to validate this route works
 // '/games' - Where the user sees all games in the library
-router.get('/games', withAuth, (req,res) => {
+router.get('/games', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const gameData = await Game.findAll({
-      include: [{model: Review}],
+      include: [{ model: Review }],
     });
 
-    const games = gameData.map((game) => game.get({plain:true}))
+    const games = gameData.map((game) => game.get({ plain: true }));
 
     res.render('games', {
       ...games,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
-})
-
+});
 
 // TODO: Need to validate this route works
 // '/games/:id' - Where the user can see a specific game
-router.get('/games/:id', withAuth, (req,res) => {
+router.get('/games/:id', withAuth, (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const gameData = await Game.findByPk(req.params.id, {
-      include: [
-        {model: Review}, 
-        {model: User, through: UserGame },
-      ],
+      include: [{ model: Review }, { model: User, through: UserGame }],
     });
 
-    const game = gameData.get({plain:true})
+    const game = gameData.get({ plain: true });
 
     res.render('single-game', {
       ...game,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 module.exports = router;
