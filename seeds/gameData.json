@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "game_name": "Grand Theft Auto V",
+    "game_summary": "Extended Game Description goes here",
+    "short_description": "Short Description goes here",
+    "release_date": "2013-09-17",
+    "game_image": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
+  },
+  {
+    "id": 2,
+    "game_name": "The Witcher 3: Wild Hunt",
+    "game_summary": "Extended Game Description goes here",
+    "short_description": "Short Description goes here",
+    "release_date": "2015-05-18",
+    "game_image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+  },
+  {
+    "id": 3,
+    "game_name": "Portal 2",
+    "game_summary": "Extended Game Description goes here",
+    "short_description": "Short Description goes here",
+    "release_date": "2011-04-18",
+    "game_image": "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg"
+  },
+  {
+    "id": 4,
+    "game_name": "The Elder Scrolls V: Skyrim",
+    "game_summary": "Extended Game Description goes here",
+    "short_description": "Short Description goes here",
+    "release_date": "2011-11-11",
+    "game_image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+  },
+  {
+    "id": 5,
+    "game_name": "Counter-Strike: Global Offensive",
+    "game_summary": "Extended Game Description goes here",
+    "short_description": "Short Description goes here",
+    "release_date": "2012-08-21",
+    "game_image": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
+  },
+  {
+    "id": 6,
+    "game_name": "Left 4 Dead 2",
+    "game_summary": "Extended Game Description goes here",
+    "short_description": "Short Description goes here",
+    "release_date": "2009-11-17",
+    "game_image": "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg"
+  },
+  {
+    "id": 7,
+    "game_name": "BioShock Infinite",
+    "game_summary": "Extended Game Description goes here",
+    "short_description": "Short Description goes here",
+    "release_date": "2013-03-26",
+    "game_image": "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"
+  },
+  {
+    "id": 8,
+    "game_name": "Borderlands 2",
+    "game_summary": "Extended Game Description goes here",
+    "short_description": "Short Description goes here",
+    "release_date": "2012-09-18",
+    "game_image": "https://media.rawg.io/media/games/588/588c6bdff3d4baf66ec36b1c05b793bf.jpg"
+  }
+]

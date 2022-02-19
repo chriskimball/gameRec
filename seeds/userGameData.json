@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "game_id": 1,
+      "user_id": 1
+    },
+    {
+      "id": 2,
+      "game_id": 2,
+      "user_id": 2
+    },
+    {
+      "id": 3,
+      "game_id": 3,
+      "user_id": 3
+    },
+    {
+      "id": 4,
+      "game_id": 4,
+      "user_id": 1
+    },
+    {
+      "id": 5,
+      "game_id": 5,
+      "user_id": 2
+    },
+    {
+      "id": 6,
+      "game_id": 6,
+      "user_id": 3
+    },
+    {
+      "id": 7,
+      "game_id": 7,
+      "user_id": 1
+    },
+    {
+      "id": 8,
+      "game_id": 8,
+      "user_id": 2
+    }
+  ]
+  

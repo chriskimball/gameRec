@@ -1,13 +1,10 @@
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Review, Game, UserGames } = require('../models');
 
 const userData = require('./userData.json');
-
-/**
- * Leaving for future reference
- */
- 
-// const projectData = require('./projectData.json');
+const gameData = require('./gameData.json');
+const reviewData = require('./reviewData.json');
+const userGameData = require('./userGameData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -17,16 +14,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  /**
-   * Leaving for future reference
-   */
-
-  // for (const project of projectData) {
-  //   await Project.create({
-  //     ...project,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
+  const games = await Game.bulkCreate(gameData);
+  const reviews = await Review.bulkCreate(reviewData);
+  const userGames = await UserGames.bulkCreate(userGameData);
 
   process.exit(0);
 };

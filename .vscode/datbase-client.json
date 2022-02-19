@@ -1,0 +1,43 @@
+{
+    "database.connections": {
+        "1645090453613": {
+            "key": "1645090453613",
+            "host": "127.0.0.1",
+            "port": "3306",
+            "user": "root",
+            "password": "password",
+            "timezone": "+00:00",
+            "useSSL": false,
+            "isCluster": false,
+            "clientCertPath": null,
+            "clientKeyPath": null,
+            "ssh": {
+                "host": "",
+                "privateKeyPath": "C:\\Users\\ctrai\\.ssh\\id_rsa",
+                "port": 22,
+                "username": "root",
+                "type": "privateKey",
+                "connectTimeout": 10000,
+                "algorithms": {
+                    "cipher": []
+                },
+                "tunnelPort": null
+            },
+            "usingSSH": false,
+            "esAuth": "none",
+            "encoding": "utf8",
+            "showHidden": false,
+            "connectionKey": "database.connections",
+            "global": false,
+            "dbType": "MySQL",
+            "connectionUrl": "",
+            "encrypt": true,
+            "dbPath": "",
+            "authType": "default",
+            "includeDatabases": null,
+            "database": null,
+            "name": "root",
+            "tooltip": "Host: 127.0.0.1, Port: 3306"
+        }
+    }
+}

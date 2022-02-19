@@ -29,9 +29,13 @@
     "no-redeclare": "error",
     "brace-style": "error",
     "indent": ["error", 2],
-    "quotes": ["error", "single"],
+    "quotes": ["error", "single", {"allowTemplateLiterals": true}],
     "semi": ["error", "always"],
     "radix": "off"
   },
-  "extends": ["prettier"]
+  "extends": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  }
 }

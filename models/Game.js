@@ -18,9 +18,15 @@ Game.init(
     game_summary: {
       type: DataTypes.STRING,
     },
+    short_description: {
+      type: DataTypes.TEXT('tiny'),
+    },
     release_date: {
       type: DataTypes.DATE,
     },
+    game_image:{
+      type: DataTypes.STRING
+    }
   },
   {
     sequelize,
