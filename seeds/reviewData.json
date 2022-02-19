@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "rating": 4,
+    "platform": "Computer",
+    "review_text": "Review for GTA 5",
+    "user_id": 2,
+    "game_id": 1
+  },
+  {
+    "id": 2,
+    "rating": 5,
+    "platform": "Xbox",
+    "review_text": "Review for The Witcher 3",
+    "user_id": 3,
+    "game_id": 2
+  },
+  {
+    "id": 3,
+    "rating": 3,
+    "platform": "Playstation",
+    "review_text": "Review for Portal 2",
+    "user_id": 1,
+    "game_id": 3
+  },
+  {
+    "id": 4,
+    "rating": 5,
+    "platform": "Computer",
+    "review_text": "Review for Skyrim",
+    "user_id": 2,
+    "game_id": 4
+  },
+  {
+    "id": 5,
+    "rating": 2,
+    "platform": "Computer",
+    "review_text": "Review for CS Go",
+    "user_id": 3,
+    "game_id": 5
+  },
+  {
+    "id": 6,
+    "rating": 3,
+    "platform": "Computer",
+    "review_text": "Review for Left 4 Dead 2",
+    "user_id": 1,
+    "game_id": 6
+  },
+  {
+    "id": 7,
+    "rating": 5,
+    "platform": "Computer",
+    "review_text": "Review for BioShock Infinite",
+    "user_id": 2,
+    "game_id": 7
+  },
+  {
+    "id": 8,
+    "rating": 5,
+    "platform": "Computer",
+    "review_text": "Review for Borderlands 2",
+    "user_id": 3,
+    "game_id": 8
+  }
+]

@@ -12,11 +12,14 @@ Review.init(
       autoIncrement: true,
     },
     rating: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     platform: {
       type: DataTypes.TEXT('tiny'),
     },
+    review_text: {
+      type: DataTypes.TEXT('tiny')
+    }
   },
   {
     sequelize,
