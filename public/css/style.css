@@ -2,6 +2,12 @@ header, .project:not(:last-child) {
     border-bottom: 1px solid #ccc;
 }
   
+img {
+    max-width: 250px; 
+    height: 250px; 
+    object-fit: scale-down;
+}
+
 .btn-primary {
     background-color: #20c997 !important;
     border-color: black;

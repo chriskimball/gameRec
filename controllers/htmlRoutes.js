@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Game, UserGame, Review } = require('../models');
+const { User, Game, UserGames, Review } = require('../models');
 const withAuth = require('../utils/auth');
 
 // // TODO: Need to validate this route works
