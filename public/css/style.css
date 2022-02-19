@@ -1,0 +1,116 @@
+header, .project:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+  
+.btn-primary {
+    background-color: #20c997 !important;
+    border-color: black;
+    padding: 0;
+    cursor: pointer;
+    color: black !important;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+.btn-primary:hover {
+    background-color: white !important;
+    color: black;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    border-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #20c997 !important;
+    color: white;
+    text-decoration: none;
+    font-size: 150%;
+
+}
+
+.btn-secondary:active {
+    color: rgb(198, 29, 240);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.dollar-amount {
+    color: #056605;
+    font-weight: bold;
+    margin-left: -5px;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+
+
+.signUpFont:link {    
+    color: #20c997;
+    background-color: transparent;
+    text-decoration: none;
+      
+}
+
+.signUpFont:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.signUpFont:active {
+    color: rgb(198, 29, 240);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bg-custom-2 {
+    background-image: linear-gradient(to right,#000000 0%, #3b4949 100%);
+}
+
+.bi-search {
+    font-size: 30px;
+    text-align: center;
+    width: 40px;
+    height: 50px;
+    padding-top: 3px;
+}
+
+.form-control {
+    background-color: transparent;
+}
+
+.bannerimage {
+    background-image: url("../images/gameRec.png");
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;    
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .banner {
+      height: 180px;
+      background-size: cover;
+      position: relative;
+  }
+  .navbar {
+      flex-direction: column;
+  }
+}
