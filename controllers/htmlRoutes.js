@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { User, Game, UserGames, Review } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -86,10 +87,28 @@ router.get('/games', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const gameData = await Game.findAll({
       include: [{ model: Review }],
+      attributes: {
+        include: [
+          [
+            // Use plain SQL to add up the total mileage
+            sequelize.literal(
+              '(SELECT COUNT(*) FROM review WHERE review.game_id = game.id)'
+            ),
+            'totalReviews',
+          ],
+          [
+            // Use plain SQL to add up the total mileage
+            sequelize.literal(
+              '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = game.id)'
+            ),
+            'averageReview',
+          ],
+        ],
+      },
     });
 
     const games = gameData.map((game) => game.get({ plain: true }));
-    console.log(games);
+    console.log('hello', games);
     res.render('games', {
       games,
       logged_in: true,
@@ -105,13 +124,31 @@ router.get('/games/:id', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const gameData = await Game.findByPk(req.params.id, {
-      include: [{ model: Review }, { model: User, through: UserGame }],
+      include: [{ model: Review }, { model: User, through: UserGames }],
+      attributes: {
+        include: [
+          [
+            // Use plain SQL to add up the total mileage
+            sequelize.literal(
+              `(SELECT COUNT(*) FROM review WHERE review.game_id = ${req.params.id})`
+            ),
+            'totalReviews',
+          ],
+          [
+            // Use plain SQL to add up the total mileage
+            sequelize.literal(
+              `(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = ${req.params.id})`
+            ),
+            'averageReview',
+          ],
+        ],
+      },
     });
 
     const game = gameData.get({ plain: true });
-
+    console.log(game);
     res.render('single-game', {
-      ...game,
+      game,
       logged_in: true,
     });
   } catch (err) {
