@@ -11,10 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-   <!-- Add the slick-theme.css if you want default styling -->
-   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
-   <!-- Add the slick-theme.css if you want default styling -->
-   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+  
   <link rel="stylesheet" href="./css/jass.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>Static Homepage HTML Template</title>
@@ -25,74 +22,53 @@
     <!-- Homepage Banner -->
     <div class="banner-image">
       <div class="banner-text text-center">
-        <h1>Game<span class="rec">Rec</span></h1>
+        <h1><i class="bi bi-controller"></i>Game<span class="rec">Rec</span></h1>
         <p></p>
       </div>
     </div>
     <!-- Homepage Caraousel -->
-    <div class="container">
-      <div id="carousel" class="carousel autoplay">
-        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-          <img
-            src="https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,w_1089/ncom/en_US/games/switch/t/the-legend-of-zelda-breath-of-the-wild-switch/hero?v=2022021509">
-          <div class="card-body">
-            <h3 class="card-title">The Legend of Zelda: Breath of the Wild</h3>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
           </div>
         </div>
-        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-          <img src="https://cdn2.unrealengine.com/7up-v2-3840x2160-e11fc91a84d6.jpg">
-          <div class="card-body">
-            <h3 class="card-title">Fortnite</h3>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
           </div>
         </div>
-        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-          <img
-            src="https://compass-ssl.xbox.com/assets/da/3c/da3c9f4a-4e2e-4424-b020-836f9d23faa3.jpg?n=Assassins-Creed-Odyssey_GLP-Page-Hero-1084_1920x1080.jpg">
-          <div class="card-body">
-            <h3 class="card-title">Assassin's Creed Odyssey</h3>
-          </div>
-        </div>
-        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-          <img
-            src="https://media.contentapi.ea.com/content/dam/masseffect/en-us/migrated-images/2016/07/en-us-featured-image.jpg.adapt.crop191x100.1200w.jpg">
-          <div class="card-body">
-            <h3 class="card-title">Mass Effect Andromeda</h3>
-          </div>
-        </div>
-        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-          <img src="https://cdn.akamai.steamstatic.com/steam/apps/1551360/capsule_616x353.jpg?t=1639781159">
-          <div class="card-body">
-            <h3 class="card-title">Forza Horizon 5</h3>
-          </div>
-        </div>
-        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-          <img src="https://image.api.playstation.com/vulcan/img/rnd/202009/2913/TQKAd8U6hnIFQIIcz6qnFh8C.png">
-          <div class="card-body">
-            <h3 class="card-title">The Witcher 3: Wild Hunt</h3>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
           </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  </div>
+  </div>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="slick/slick.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-  <!-- <script src="./js/carousel.js"></script> -->
-
-  <script type="text/javascript">
-    $('#carousel').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-    });  
-  </script>
-
 </body>
 
 </html>

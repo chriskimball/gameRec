@@ -1,6 +1,5 @@
-
 <div class="container">
-        <div class="row p-1 m-1 justify-content-around">
+    <div class="row p-1 m-1 justify-content-around">
 
             <div class="col-2 d-flex flex-column">
                 <!-- Dropdown Menu to add review -->
@@ -36,14 +35,49 @@
                 
             </div>
         </div>
+        <div class="col-8">
+            <div>Game cards go here</div>
+        </div>
     </div>
- <!-- Modal -->
-    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content form-group">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="formModalLabel">Add New Review</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content form-group">
+            <div class="modal-header">
+                <h3 class="modal-title" id="formModalLabel">Add New Review</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body form-group">
+                <label for="exampleGameDataList" class="form-label">Title of Game</label>
+                <input class="form-control" list="GameListOptions" id="exampleGameDataList"
+                    placeholder="Type to search...">
+                <datalist id="GameListOptions">
+                     {{#each games as |game|}}
+                    <option value="{{game.game_name}}" id="{{game.id}}"></option>
+                    {{/each}}                    
+                </datalist>
+            </div>
+            <div class="modal-body form-group">
+                <label for="platformDataList" class="form-label">Game Platform</label>
+                <input class="form-control" list="platformOptions" id="platformDataList" placeholder="Example: Xbox">
+                <datalist id="platformOptions">
+                    <option value="Playstation">
+                    <option value="Xbox">
+                    <option value="Nintendo Switch">
+                    <option value="PC">
+                    <option value="Mobile">
+                </datalist>
+            </div class="rating form-group">
+            <p class="form-label p-3">Rating</p>
+            <div class="rating-radio">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
                 </div>
                 <div class="modal-body form-group">
                     <label for="exampleGameDataList" class="form-label">Title of Game</label>
@@ -55,61 +89,26 @@
                         {{/each}}
                     </datalist>
                 </div>
-                <div class="modal-body form-group">
-                    <label for="platformDataList" class="form-label">Game Platform</label>
-                    <input class="form-control" list="platformOptions" id="platformDataList"
-                        placeholder="Example: Xbox">
-                    <datalist id="platformOptions">
-                        <option value="Playstation">
-                        <option value="Xbox">
-                        <option value="Nintendo Switch">
-                        <option value="PC">
-                        <option value="Mobile">
-                    </datalist>
-                </div class="rating form-group">
-                <p class="form-label p-3">Rating</p>
-                <div class="rating">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="1">
-                        <label class="form-check-label" for="inlineRadio1">1</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="2">
-                        <label class="form-check-label" for="inlineRadio2">2</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                            value="3">
-                        <label class="form-check-label" for="inlineRadio3">3</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
-                            value="4">
-                        <label class="form-check-label" for="inlineRadio4">4</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
-                            value="5">
-                        <label class="form-check-label" for="inlineRadio5">5</label>
-                    </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
                 </div>
-                <div class="form-group textarea rounded">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+            </div>
+            <div class="form-group textarea rounded">
                 <label for="review-textarea" class="form-label">Written Review</label>
                 <textarea type="text" class="form-control" id="review-textarea" rows="4"
                     placeholder="What did you like or dislike about the game? Would you recommend this game?"></textarea>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info">Save changes</button>
-            </div>
-            
-            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-info">Save changes</button>
         </div>
     </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+</div>
+</div>

@@ -13,16 +13,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/jass.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Static Games HTML Template</title>
+    <title>Static Single Game HTML Template</title>
 </head>
 
 <body>
-    <div class="container-fluid single-game-body">
-        <div class="row p-1 m-1 justify-content-around">
-
-            <div class="col-4 d-flex flex-column">
+    <div class="container">
+        <div class="row p-1 m-1 flex-wrap single-game-main">
+            <div class="col-4 d-flex add-review-menu">
                 <!-- Dropdown Menu to add review -->
-                <div class="dropdown">
+                <div class="dropdown add-review-button ">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-file-plus"></i>
@@ -35,8 +34,24 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-8">
-
+            <div class="col-8 flex-wrap single-game-body">
+                <div class="d-flex flex-column">
+                    <div class="game-title">
+                        <h1>Game Title</h1>
+                    </div>
+                    <div class="game-banner">
+                        <img src = "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg" alt=" " class="d-block w-100 center border border-5 border-secondary">
+                    </div>
+                    <div class = "row flex-wrap single-game-sub-body ">
+                        <div class="col border border-secondary m-1 rounded border-2">
+                            <p><b>Game genre: </b>genre goes here</p>
+                            <p><b>Release date: </b>5-18-2015</p>
+                            <p><b>Platform(s): </b>add list of platforms here</p>
+                            <p><b>Game description: </b>short description goes here</p>
+                        </div>
+                        <div class="col game-reviews border border-secondary border-2 ms-auto m-1 rounded">Reviews</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
