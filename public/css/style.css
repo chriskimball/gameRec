@@ -1,13 +1,42 @@
+/* Main Handlebar */
 header, .project:not(:last-child) {
     border-bottom: 1px solid #ccc;
 }
-  
-img {
-    max-width: 250px; 
-    height: 250px; 
-    object-fit: scale-down;
+
+body {
+    background-color: black;
+    color: white;
+    height:100%
 }
 
+/* .footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+   
+  } */
+
+/* Main Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bg-custom-2 {
+    background-image: linear-gradient(to right,#000000 0%, #3b4949 100%);
+}
+
+.bi-search {
+    font-size: 30px;
+    text-align: center;
+    width: 40px;
+    height: 50px;
+    padding-top: 3px;
+}
+  
 .btn-primary {
     background-color: #20c997 !important;
     border-color: black;
@@ -44,19 +73,7 @@ img {
     text-decoration: underline;
 }
 
-.dollar-amount {
-    color: #056605;
-    font-weight: bold;
-    margin-left: -5px;
-}
-
-body {
-    background-color: black;
-    color: white;
-}
-
-
-
+/* Signup Page */
 .signUpFont:link {    
     color: #20c997;
     background-color: transparent;
@@ -76,25 +93,6 @@ body {
     text-decoration: underline;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.bg-custom-2 {
-    background-image: linear-gradient(to right,#000000 0%, #3b4949 100%);
-}
-
-.bi-search {
-    font-size: 30px;
-    text-align: center;
-    width: 40px;
-    height: 50px;
-    padding-top: 3px;
-}
-
 .form-control {
     background-color: transparent;
 }
@@ -109,8 +107,7 @@ body {
     position: relative;    
 }
 
-.banner-text h1{
-    text-align: center;
+.banner-text h1 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -120,10 +117,26 @@ body {
     font-size: 100px;
 }
 
+
 .rec {
     color: #20c997 ;
 }
 
+.bi-controller {
+    color: #20c997 ;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg-custom {
+    background-color: rgba(128, 128, 128, 0.274);
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
 /* Games Handlebar */
 .bi-file-plus {
     font-size: 30px;
@@ -133,12 +146,14 @@ body {
     padding-top: 3px;
 }
 
+
+
 /* Add Game Review Modal Form */
 .modal {
     color: black;
 }
 
-.rating {
+.rating-radio {
     padding: 16px;
     align-items: center;
 }
@@ -149,6 +164,21 @@ body {
     padding: 16px;
     }
 
+/* Single-Game View */
+
+.game-title { 
+    text-align: center;    
+    color: #20c997 ;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20vw;
+
+}
+
+/* .single-game-info {
+    border-color: #3b4949;
+    border-style: ;
+} */
+
 
 @media screen and (max-width: 768px) {
   .banner {
@@ -156,7 +186,32 @@ body {
       background-size: cover;
       position: relative;
   }
+
+  .btn-group {
+      flex-direction: column;
+      justify-content: center;
+  }
   .navbar {
       flex-direction: column;
+
+  }
+
+  .single-game-main {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .add-review-button {
+
+  }
+  .single-game-body {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .single-game-sub-body {     
+      flex-direction: column;
+      justify-content: center;
   }
 }
