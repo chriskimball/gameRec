@@ -8,6 +8,7 @@
             <div class="modal-body form-group">
                 <label for="game-title" class="form-label">Title of Game</label>
                 <select name="game-title" class="form-control" id="game-title">
+                    <option style="display:none"></option>
                     {{#each games as |game|}}
                     <option value="{{game.id}}" id="{{game.id}}">{{game.game_name}}</option>
                     {{/each}}
@@ -15,7 +16,8 @@
             </div>
             <div class="modal-body form-group">
                 <label for="platform" class="form-label">Game Platform</label>
-                <select class="form-control" list="platformOptions" id="platform" placeholder="Example: Xbox">
+                <select class="form-control" list="platformOptions" id="platform">
+                    <option style="display:none"></option>
                     <option value="Playstation">Playstation</option>
                     <option value="Xbox">Xbox</option>
                     <option value="Nintendo Switch">Nintendo Switch</option>
