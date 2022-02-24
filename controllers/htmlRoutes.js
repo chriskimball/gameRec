@@ -108,7 +108,7 @@ router.get('/games', withAuth, async (req, res) => {
     });
 
     const games = gameData.map((game) => game.get({ plain: true }));
-    console.log('hello', games);
+
     res.render('games', {
       games,
       logged_in: true,
@@ -146,7 +146,7 @@ router.get('/games/:id', withAuth, async (req, res) => {
     });
 
     const game = gameData.get({ plain: true });
-    console.log(game);
+
     res.render('single-game', {
       game,
       logged_in: true,
