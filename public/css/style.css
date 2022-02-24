@@ -164,6 +164,21 @@ body {
     padding: 16px;
     }
 
+/* Single-Game View */
+
+.game-title { 
+    text-align: center;    
+    color: #20c997 ;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20vw;
+
+}
+
+/* .single-game-info {
+    border-color: #3b4949;
+    border-style: ;
+} */
+
 
 @media screen and (max-width: 768px) {
   .banner {
@@ -179,5 +194,24 @@ body {
   .navbar {
       flex-direction: column;
 
+  }
+
+  .single-game-main {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .add-review-button {
+
+  }
+  .single-game-body {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .single-game-sub-body {     
+      flex-direction: column;
+      justify-content: center;
   }
 }

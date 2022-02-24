@@ -1,18 +1,38 @@
 <div class="container">
     <div class="row p-1 m-1 justify-content-around">
 
-        <div class="col-4 d-flex flex-column">
-            <!-- Dropdown Menu to add review -->
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-file-plus"></i>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button" data-bs-toggle="modal"
-                            data-bs-target="#formModal">Add New Game Review</button></li>
-
-                </ul>
+            <div class="col-2 d-flex flex-column">
+                <!-- Dropdown Menu to add review -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-file-plus"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button class="dropdown-item" type="button" data-bs-toggle="modal"
+                                data-bs-target="#formModal">Add Review</button></li>
+                        <li><button class="dropdown-item" type="button">Add to My Games</button></li>
+                        <li><button class="dropdown-item" type="button">Add to Wishlist</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-10 d-flex flex-wrap justify-content-evenly">
+                
+                {{#each games as |game|}}
+                <div class="card text-white bg-secondary m-3" style="width: 18rem;">
+                    <div class="mx-auto">
+                        <a href="/games/{{game.id}}">
+                            <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;" src="{{game.game_image}}">
+                        </a>
+                    </div>
+                    <div class="card-body mx-auto">
+                        <h3 class="card-title">{{game.game_name}}</h3>
+                        <h6>{{game.short_description}}</h6>
+                        <p>Average Rating: {{game.averageReview}}<br> Reviews: {{game.totalReviews}}</p>
+                    </div>
+                </div>
+                {{/each}}
+                
             </div>
         </div>
         <div class="col-8">
@@ -59,9 +79,15 @@
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
                     <label class="form-check-label" for="inlineRadio2">2</label>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
-                    <label class="form-check-label" for="inlineRadio3">3</label>
+                <div class="modal-body form-group">
+                    <label for="exampleGameDataList" class="form-label">Title of Game</label>
+                    <input class="form-control" list="GameListOptions" id="exampleGameDataList"
+                        placeholder="Type to search...">
+                    <datalist id="GameListOptions">
+                        {{#each games as |game|}}
+                        <option value="{{game.game_name}}" id="{{game.id}}"></option>
+                        {{/each}}
+                    </datalist>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
