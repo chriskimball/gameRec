@@ -45,4 +45,17 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/about-us', async (req, res) => {
+  try {
+
+    // Pass serialized data and session flag into template
+    res.render('about-us', {
+      logged_in: req.session.logged_in 
+    });
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { render } = require('express/lib/response');
 const sequelize = require('../config/connection');
 const { User, Game, UserGames, Review } = require('../models');
 const withAuth = require('../utils/auth');
@@ -19,26 +20,26 @@ router.get('/', async (req, res) => {
 // '/profile' - Where the user sees their profile information and games in their collection
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
-  //   try {
-  //     // Get all projects and JOIN with user data
-  //     const userData = await User.findAll({
-  //       where: {
-  //         id: req.session.user_id,
-  //       },
-  //       attributes: { exclude: ['password'] },
-  //       include: [{ model: Game, through: UserGames }],
-  //     });
+    try {
+      // Get all projects and JOIN with user data
+      const userData = await User.findAll({
+        where: {
+          id: req.session.user_id,
+        },
+        attributes: { exclude: ['password'] },
+        include: [{ model: Game, through: UserGames }],
+      });
 
-  //     // Serialize data so the template can read it
-  //     const user = userData.get({ plain: true });
-  //     // Pass serialized data and session flag into template
-  //     res.render('profile', {
-  //       ...user,
-  //       logged_in: req.session.logged_in,
-  //     });
-  //   } catch (err) {
-  //     res.status(500).json(err);
-  //   }
+      // Serialize data so the template can read it
+      const user = userData.get({ plain: true });
+      // Pass serialized data and session flag into template
+      res.render('profile', {
+        ...user,
+        logged_in: req.session.logged_in,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
 
   try {
     // Find the logged in user based on the session ID
@@ -154,6 +155,10 @@ router.get('/games/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get('/about-us', async (req, res) => {
+  res.render('about-us');
 });
 
 module.exports = router;
