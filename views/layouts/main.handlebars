@@ -20,9 +20,9 @@
   <header>
     <nav class="navbar bavbar-expand-lg bg-custom-2 text-light">
       <div class="btn-group">
-        <a class="btn btn-primary btn-lg" href="/" type="button">Home</a>
-        <a class="btn btn-primary btn-lg" href="/games" type="button">Games</a>
-        <a class="btn btn-primary btn-lg" href="#" type="button">About us</a>
+        <a class="btn btn-primary btn-custom " href="/" type="button">Home</a>
+        <a class="btn btn-primary btn-custom " href="/games" type="button">Games</a>
+        <a class="btn btn-primary btn-custom" href="#" type="button">About us</a>
       </div>
 
       <div class="d-flex">
@@ -32,10 +32,10 @@
             aria-describedby="search-addon" />
         </div>
         {{#if logged_in}}
-        <a class="btn btn-primary btn-lg" href="/profile">Profile</a> |
-        <a class="btn btn-primary btn-lg" id="logout" href="/">Logout</a>
+        <a class="btn btn-primary btn-custom" href="/profile">Profile</a> |
+        <a class="btn btn-primary btn-custom" id="logout" href="/">Logout</a>
         {{else}}
-        <a class="btn btn-primary btn-lg" href="/login" type="button">Login</a>
+        <a class="btn btn-primary btn-custom" href="/login" type="button">Login</a>
         {{/if}}
       </div>
     </nav>
