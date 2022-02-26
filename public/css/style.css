@@ -221,6 +221,7 @@ body {
   }
 }
 
+/* about us page */
 .profile-kurtis {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/Kurtis.jpg");
     height: 250px;
@@ -228,4 +229,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative; 
+}
+
+.aboutus-header {
+    color: #20c997;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5vw;
 }
