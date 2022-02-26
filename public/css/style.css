@@ -63,7 +63,7 @@ body {
     background-color: #20c997 !important;
     color: white;
     text-decoration: none;
-    font-size: 150%;
+    font-size: 100%;
 
 }
 
@@ -219,4 +219,20 @@ body {
       flex-direction: column;
       justify-content: center;
   }
+}
+
+/* about us page */
+.profile-kurtis {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/Kurtis.jpg");
+    height: 250px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+}
+
+.aboutus-header {
+    color: #20c997;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5vw;
 }
