@@ -108,14 +108,12 @@ router.get('/games/:id', withAuth, async (req, res) => {
       attributes: {
         include: [
           [
-            // Use plain SQL to add up the total mileage
             sequelize.literal(
               `(SELECT COUNT(*) FROM review WHERE review.game_id = ${req.params.id})`
             ),
             'totalReviews',
           ],
           [
-            // Use plain SQL to add up the total mileage
             sequelize.literal(
               `(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = ${req.params.id})`
             ),
@@ -128,25 +126,19 @@ router.get('/games/:id', withAuth, async (req, res) => {
     const games = gameData.get({ plain: true });
     console.log(games);
 
-    // const reviewData = await Review.findAll({
-    //   where: {
-    //     game_id: req.params.id,
-    //   },
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
-    // const reviews = reviewData.map((review) => review.get({ plain: true }));
-    // console.log(reviews);
-    // // const platforms = reviewData.map(selectProps('platform'));
-    // // // selectProps("platform")
-    // // console.log(platforms);
+    const parsePlatforms = (data) => {
+      const array = [];
+      for (review of data.reviews) {
+        array.push(review.platform);
+      }
+      return (uniq = [...new Set(array)]);
+    };
+
+    const platforms = parsePlatforms(games);
+
     res.render('single-game', {
       games,
-      // reivews,
+      platforms,
       logged_in: true,
     });
   } catch (err) {
