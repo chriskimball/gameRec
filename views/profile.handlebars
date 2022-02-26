@@ -4,28 +4,28 @@
   </div>
 </div> --}}
 
-<div class="row p-1 m-1 section">
-  <aside class="col-3 d-flex flex-column">
-    <h2 style="text-align: center;">{{name}}</h2>
-    <a class="btn btn-secondary btn-lg" href="#" type="button">My Games</a>
-    <a class="btn btn-secondary btn-lg" href="#" type="button">Wishlist</a>
-    <a class="btn btn-secondary btn-lg" href="/games" type="button">Game Reviews</a>
+<div class="row p-1 m-1 section col-lg">
+  <aside class="d-flex flex-column col-lg-3">
+    <h2 style = "text-align: center;">{{name}}</h2>  
+    <a class = "btn btn-secondary btn-lg profile-btn" href="#" type="button">My Games</a>
+    <a class = "btn btn-secondary btn-lg" href="#" type="button">Wishlist</a>
+    <a class = "btn btn-secondary btn-lg" href="/games" type="button">Game Reviews</a>          
   </aside>
 
-  <main>
-
-    {{!-- User Game carousel --}}
-    <div id="carousel-home" class="carousel slide" data-bs-ride="carousel">
+  <main class="col-lg">
+  {{!-- User Game carousel --}}
+  <div id="carousel-home" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
-            class="d-block w-50 center rounded-3" alt="...">
+          <img src="https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg" class="d-block w-50 center rounded-3" alt="...">
           <div class="carousel-caption d-none d-md-block bg-custom">
             <h5>Grand Theft Auto V</h5>
           </div>
