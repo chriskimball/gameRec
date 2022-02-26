@@ -119,13 +119,14 @@ body {
     transform: translate(-50%, -50%);
     color: white;
     font-family: 'Orbitron', sans-serif;
-    font-size: 100px;
+    font-size: 7vw;
 }
 
 
 .rec {
     color: #20c997 ;
 }
+
 
 .bi-controller {
     color: #20c997 ;
@@ -175,9 +176,8 @@ body {
     text-align: center;    
     color: #20c997 ;
     font-family: 'Orbitron', sans-serif;
-    font-size: 20vw;
-
-}
+    font-family: 5vw;
+  }
 
 /* .single-game-info {
     border-color: #3b4949;
@@ -201,7 +201,7 @@ body {
 
   }
 
-  .single-game-main {
+  .games-body {
     flex-direction: column;
     justify-content: center;
   }
