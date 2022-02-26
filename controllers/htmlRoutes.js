@@ -20,7 +20,6 @@ router.get('/', async (req, res) => {
 // '/profile' - Where the user sees their profile information and games in their collection
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
-
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -128,8 +127,26 @@ router.get('/games/:id', withAuth, async (req, res) => {
 
     const games = gameData.get({ plain: true });
     console.log(games);
+
+    // const reviewData = await Review.findAll({
+    //   where: {
+    //     game_id: req.params.id,
+    //   },
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
+    // const reviews = reviewData.map((review) => review.get({ plain: true }));
+    // console.log(reviews);
+    // // const platforms = reviewData.map(selectProps('platform'));
+    // // // selectProps("platform")
+    // // console.log(platforms);
     res.render('single-game', {
       games,
+      // reivews,
       logged_in: true,
     });
   } catch (err) {
