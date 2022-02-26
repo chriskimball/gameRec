@@ -29,16 +29,25 @@
                     <div class="col border border-secondary m-1 rounded border-2">
                         <p><b>Game genre: </b>genre goes here</p>
                         <p><b>Release date: </b>{{format_date games.release_date}}</p>
-                        <p><b>Platform(s): </b>add list of platforms here</p>
+                        <p><b>Platform(s): </b>
+                            {{#if platforms.length}}
+                                <ul>
+                                {{#each platforms as |platform|}}
+                                    <li>{{platform}}</li>
+                                {{/each}}
+                            {{else}} 
+                                None.
+                            {{/if}}
+                        </ul></p>
                         <p><b>Game description: </b>{{games.game_summary}}</p>
                     </div>
                     {{!-- Review Div --}}
                     <div class="col game-reviews border border-secondary border-2 ms-auto m-1 rounded d-flex flex-column">
-                        <h3>Reviews</h3>
+                        <h3>Reviews - {{games.totalReviews}}</h3>
                         {{!-- test review --}}
                         {{#each games.reviews as |review|}}
                         <div class="border border-secondary border-1 m-1">
-                            <div>"{{review.review_text}}"</div>
+                            <div>{{review.review_text}} -- </div>
                         </div>
                         {{/each}}
                         {{!-- test review --}}
