@@ -73,6 +73,11 @@ body {
     text-decoration: underline;
 }
 
+.btn-custom {
+    font-size: 20px;
+    padding: 12px 22.4px;
+}
+
 /* Signup Page */
 .signUpFont:link {    
     color: #20c997;
