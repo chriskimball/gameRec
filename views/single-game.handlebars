@@ -1,6 +1,6 @@
 <div class="container ">
     <div class="row p-1 m-1 flex-wrap games-body">
-        <div class="col-4 d-flex add-review-menu">
+        <div class="col-2 d-flex add-review-menu">
             <!-- Dropdown Menu to add review -->
             <div class="dropdown add-review-button ">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
@@ -16,9 +16,9 @@
                 </ul>
             </div>
         </div>
-        <div class="col-8 flex-wrap single-game-body">
-            <div class="d-flex flex-column">
-                <div>
+        <div class="col-10 flex-wrap single-game-body">
+            <div class=" flex-column">
+                <div class="m-1">
                     <h1 class="game-title">{{games.game_name}}</h1>
                 </div>
                 <div class="game-banner">
@@ -27,26 +27,26 @@
                 </div>
                 <div class="row flex-wrap single-game-sub-body">
                     <div class="col border border-secondary m-1 rounded border-2">
-                        <p><b>Game genre: </b>genre goes here</p>
+                        <h3 class="text-start m-1">Game info</h3>
                         <p><b>Release date: </b>{{format_date games.release_date}}</p>
                         <p><b>Platform(s): </b>add list of platforms here</p>
                         <p><b>Game description: </b>{{games.game_summary}}</p>
                     </div>
                     {{!-- Review Div --}}
                     <div class="col game-reviews border border-secondary border-2 ms-auto m-1 rounded d-flex flex-column">
-                        <h3>Reviews</h3>
+                        <h3 class="text-start m-1">Reviews</h3>
                         {{!-- test review --}}
                         {{#each games.reviews as |review|}}
                         <div class="border border-secondary border-1 m-1">
-                            <div>"{{review.review_text}}"</div>
+                            <div class="m-1">"{{review.review_text}}"</div>
                         </div>
                         {{/each}}
                         {{!-- test review --}}
                         <div class="border border-secondary border-1 m-1">
-                            <div>2nd review text</div>
+                            <div class="m-1">2nd review text</div>
                         </div>
                          <div class="border border-secondary border-1 m-1">
-                            <div>Third Review test div</div> 
+                            <div class="m-1">Third Review test div</div> 
                         </div>
                     </div>
                     {{!-- end of review div --}}
