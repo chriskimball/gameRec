@@ -186,10 +186,12 @@ body {
     font-size: 3vw;
   }
 
-/* .single-game-info {
-    border-color: #3b4949;
-    border-style: ;
-} */
+.single-game-body h3 {
+    text-align: center;    
+    color: #20c997 ;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2vw;
+}
 
 
 @media screen and (max-width: 768px) {

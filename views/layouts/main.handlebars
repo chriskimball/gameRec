@@ -29,8 +29,8 @@
         {{#if logged_in}}
         <div class="input-group rounded">
           <i class="bi bi-search"></i>
-          <input id="searchBar" type="search" class="form-control rounded" placeholder="Search by game title" aria-label="Search"
-            aria-describedby="search-addon" />
+          <input id="searchBar" type="search" class="form-control rounded" placeholder="Search by game title"
+            aria-label="Search" aria-describedby="search-addon" />
         </div>
         <a class="btn btn-primary btn-custom" href="/profile">Profile</a> |
         <a class="btn btn-primary btn-custom" id="logout" href="/">Logout</a>
@@ -41,17 +41,18 @@
     </nav>
 
   </header>
-  <div class="d-flex flex-column">
-    <main class="d-flex flex-column">
+  <div class=" row d-flex flex-column">
+    <main class=" d-flex flex-column">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <!-- Footer -->
-    <div class="container">
+    <div class="row">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top footer">
         <p class="col-md-4 mb-0 text-muted">&copy; 2022 Group 7, Inc</p>
 
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <a href="/"
+          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
           <i class="bi bi-controller"></i>
         </a>
 
@@ -62,6 +63,7 @@
         </ul>
       </footer>
     </div>
+  </div>
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
