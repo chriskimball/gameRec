@@ -26,12 +26,12 @@
       </div>
 
       <div class="d-flex">
+        {{#if logged_in}}
         <div class="input-group rounded">
           <i class="bi bi-search"></i>
-          <input id="searchBar" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+          <input id="searchBar" type="search" class="form-control rounded" placeholder="Search by game title" aria-label="Search"
             aria-describedby="search-addon" />
         </div>
-        {{#if logged_in}}
         <a class="btn btn-primary btn-custom" href="/profile">Profile</a> |
         <a class="btn btn-primary btn-custom" id="logout" href="/">Logout</a>
         {{else}}

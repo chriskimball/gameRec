@@ -152,6 +152,13 @@ body {
     padding-top: 3px;
 }
 
+.games-title {
+    text-align: center;    
+    color: #20c997 ;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+}
+
 
 
 /* Add Game Review Modal Form */
@@ -176,7 +183,7 @@ body {
     text-align: center;    
     color: #20c997 ;
     font-family: 'Orbitron', sans-serif;
-    font-family: 5vw;
+    font-size: 3vw;
   }
 
 /* .single-game-info {
