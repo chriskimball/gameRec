@@ -8,10 +8,14 @@
             <div class="modal-body form-group">
                 <label for="game-title" class="form-label">Title of Game</label>
                 <select name="game-title" class="form-control" id="game-title">
+                    {{#if games.length}}
                     <option style="display:none"></option>
-                    {{#each games as |game|}}
-                    <option value="{{game.id}}" id="{{game.id}}">{{game.game_name}}</option>
-                    {{/each}}
+                        {{#each games as |game|}}
+                            <option value="{{game.id}}" id="{{game.id}}">{{game.game_name}}</option>
+                        {{/each}}
+                    {{else}}
+                        <option value="{{games.id}}" id="{{games.id}}">{{games.game_name}}</option>
+                    {{/if}}
                 </select>
             </div>
             <div class="modal-body form-group">

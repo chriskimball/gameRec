@@ -10,7 +10,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <li><button class="dropdown-item" type="button" data-bs-toggle="modal"
                             data-bs-target="#formModal">Add Review</button></li>
-                    <li><button class="dropdown-item" id="add-to-library" type="button" data-id="{{game.id}}">Add to My
+                    <li><button class="dropdown-item" id="add-to-library" type="button" data-id="{{games.id}}">Add to My
                             Games</button></li>
                     <li><button class="dropdown-item" type="button">Add to Wishlist</button></li>
                 </ul>
@@ -19,18 +19,18 @@
         <div class="col-8 flex-wrap single-game-body">
             <div class="d-flex flex-column">
                 <div>
-                    <h1 class="game-title">{{game.game_name}}</h1>
+                    <h1 class="game-title">{{games.game_name}}</h1>
                 </div>
                 <div class="game-banner">
-                    <img src="{{game.game_image}}" alt=" "
+                    <img src="{{games.game_image}}" alt=" "
                         class="d-block w-100 center border border-5 border-secondary">
                 </div>
                 <div class="row flex-wrap single-game-sub-body">
                     <div class="col border border-secondary m-1 rounded border-2">
                         <p><b>Game genre: </b>genre goes here</p>
-                        <p><b>Release date: </b>{{format_date game.release_date}}</p>
+                        <p><b>Release date: </b>{{format_date games.release_date}}</p>
                         <p><b>Platform(s): </b>add list of platforms here</p>
-                        <p><b>Game description: </b>{{game.game_summary}}</p>
+                        <p><b>Game description: </b>{{games.game_summary}}</p>
                     </div>
                     {{!-- Review Div --}}
                     <div class="col game-reviews border border-secondary border-2 ms-auto m-1 rounded d-flex flex-column">
