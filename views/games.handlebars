@@ -19,16 +19,16 @@
             <div class="col-10 d-flex flex-wrap justify-content-evenly">
                 
                 {{#each games as |game|}}
-                <div class="card text-white bg-secondary m-3" style="width: 18rem;">
+                <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
                     <div class="mx-auto">
                         <a href="/games/{{game.id}}">
                             <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;" src="{{game.game_image}}">
                         </a>
                     </div>
                     <div class="card-body mx-auto">
-                        <h3 class="card-title">{{game.game_name}}</h3>
+                        <h3 class="card-title games-title">{{game.game_name}}</h3>
                         <h6>{{game.short_description}}</h6>
-                        <p>Average Rating: {{game.averageReview}}<br> Reviews: {{game.totalReviews}}</p>
+                        <p><span class="text-warning">Average Rating: {{game.averageReview}}</span><br> Reviews: {{game.totalReviews}}</p>
                     </div>
                 </div>
                 {{/each}}

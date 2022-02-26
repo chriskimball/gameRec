@@ -6,58 +6,60 @@
 
 <div class="row p-1 m-1 section">
   <aside class="col-3 d-flex flex-column">
-    <h2 style = "text-align: center;">{{name}}</h2>  
-    <a class = "btn btn-secondary btn-lg" href="#" type="button">My Games</a>
-    <a class = "btn btn-secondary btn-lg" href="#" type="button">Wishlist</a>
-    <a class = "btn btn-secondary btn-lg" href="/games" type="button">Game Reviews</a>          
+    <h2 style="text-align: center;">{{name}}</h2>
+    <a class="btn btn-secondary btn-lg" href="#" type="button">My Games</a>
+    <a class="btn btn-secondary btn-lg" href="#" type="button">Wishlist</a>
+    <a class="btn btn-secondary btn-lg" href="/games" type="button">Game Reviews</a>
   </aside>
 
   <main>
+
+    {{!-- User Game carousel --}}
+    <div id="carousel-home" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
+            class="d-block w-50 center rounded-3" alt="...">
+          <div class="carousel-caption d-none d-md-block bg-custom">
+            <h5>Grand Theft Auto V</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+            class="d-block w-50 center rounded-3" alt="...">
+          <div class="carousel-caption d-none d-md-block bg-custom">
+            <h5>The Witcher 3: Wild Hunt</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://media.rawg.io/media/games/588/588c6bdff3d4baf66ec36b1c05b793bf.jpg"
+            class="d-block w-50 center rounded-3" alt="...">
+          <div class="carousel-caption d-none d-md-block bg-custom">
+            <h5>Borderlands 2</h5>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel-home" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </main>
 </div>
 
-{{!-- User Game carousel --}}
-<div id="carousel-home" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carousel-home" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg" class="d-block w-50 center rounded-3" alt="...">
-        <div class="carousel-caption d-none d-md-block bg-custom">
-          <h5>Grand Theft Auto V</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg" class="d-block w-50 center rounded-3" alt="...">
-        <div class="carousel-caption d-none d-md-block bg-custom">
-          <h5>The Witcher 3: Wild Hunt</h5>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://media.rawg.io/media/games/588/588c6bdff3d4baf66ec36b1c05b793bf.jpg" class="d-block w-50 center rounded-3" alt="...">
-        <div class="carousel-caption d-none d-md-block bg-custom">
-          <h5>Borderlands 2</h5>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel-home" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 
-{{!-- 
-<div class="row mt-4">
+
+{{!-- <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Project:</h3>
 
@@ -96,6 +98,6 @@
     {{/each}}
   </div>
   {{/if}}
-</div>  --}}
+</div> --}}
 
 <script src="/js/profile.js"></script>
