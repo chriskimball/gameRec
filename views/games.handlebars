@@ -9,13 +9,15 @@
                     <i class="bi bi-file-plus"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button" data-bs-toggle="modal"data-bs-target="#formModal">Add Review</button></li>
+                    <li><button class="dropdown-item" type="button" data-bs-toggle="modal"
+                            data-bs-target="#formModal">Add Review</button></li>
 
                 </ul>
             </div>
         </div>
+        {{!-- Games main body --}}
         <div class="col-10 d-flex flex-wrap justify-content-evenly center">
-
+            {{!-- each game card --}}
             {{#each games as |game|}}
             <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1"
                 style="width: 18rem;">
@@ -36,9 +38,5 @@
 
         </div>
     </div>
-    <div class="col-8">
-        <div>Game cards go here</div>
-    </div>
-</div>
 </div>
 {{>review-modal}}
