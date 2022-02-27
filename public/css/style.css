@@ -9,21 +9,14 @@ body {
     height:100%
 }
 
-/* .footer {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-   
-  } */
 
 /* Main Navbar */
 
-.navbar {
+/* .navbar {
     display: flex;
-    justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
-}
+} */
 
 .bg-custom-2 {
     background-image: linear-gradient(to right,#000000 0%, #3b4949 100%);
