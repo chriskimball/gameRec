@@ -1,5 +1,5 @@
 <div class="container ">
-    <div class="row p-1 m-1 flex-wrap games-body">
+    <div class="row p-1 m-1 flex-wrap games-body col-lg">
         <div class="col-2 d-flex add-review-menu">
             <!-- Dropdown Menu to add review -->
             <div class="dropdown add-review-button ">
@@ -16,20 +16,24 @@
                 </ul>
             </div>
         </div>
-        <div class="col-10 flex-wrap single-game-body">
+        {{!-- Single game body --}}
+        <div class="col-lg flex-wrap single-game-body center">
             <div class=" flex-column">
+                {{!-- Single game title --}}
                 <div class="m-1">
                     <h1 class="game-title">{{games.game_name}}</h1>
                 </div>
+                {{!-- Single game image banner --}}
                 <div class="game-banner">
                     <img src="{{games.game_image}}" alt=" "
                         class="d-block w-100 center border border-5 border-secondary">
                 </div>
                 <div class="row flex-wrap single-game-sub-body">
+                    {{!-- Single game information --}}
                     <div class="col border border-secondary m-1 rounded border-2">
                         <h3 class="text-start m-1">Game info</h3>
-                        <p><b>Release date: </b>{{format_date games.release_date}}</p>
-                        <p><b>Platform(s): </b>
+                        <p class="m-1"><b>Release date: </b>{{format_date games.release_date}}</p>
+                        <p class="m-1"><b>Platform(s): </b>
                             {{#if platforms.length}}
                                 <ul>
                                 {{#each platforms as |platform|}}
@@ -39,20 +43,21 @@
                                 None.
                             {{/if}}
                         </ul></p>
-                        <p><b>Game description: </b>{{games.game_summary}}</p>
+                        <p class="m-1"><b>Game description: </b>{{games.game_summary}}</p>
                     </div>
-                    {{!-- Review Div --}}
+                    {{!-- Single game reviews --}}
                     <div class="col game-reviews border border-secondary border-2 ms-auto m-1 rounded d-flex flex-column">
-                        <h3 class="text-start m-1"> {{games.totalReviews}} Reviews <br> Average Rating: {{games.averageReview }}</h3>
+                        <h3 class="text-start m-1">Reviews ({{games.totalReviews}})</h3>
+                        <h5 class="text-warning m-1"> Average Rating: {{games.averageReview }}</h5>
                         {{!-- test review --}}
                         {{#each games.reviews as |review|}}
-                        <div class="border border-secondary border-1 m-1">
+                        <div class=" bg-custom-2 border border-secondary border-1 m-1">
                             <div class="m-1">{{review.review_text}} <br> Rating: {{review.rating}}</div>
                         </div>
                         {{/each}}
                         
                     </div>
-                    {{!-- end of review div --}}
+                    {{!-- end of reviews --}}
                 </div>
             </div>
         </div>
