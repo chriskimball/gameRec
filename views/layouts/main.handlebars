@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="../css/jass.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <meta charset='UTF-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <link rel='preconnect' href='https://fonts.googleapis.com' />
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+  <link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap' rel='stylesheet' />
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous' />
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' />
+  <link rel='stylesheet' href='../css/jass.css' />
+  <link rel='stylesheet' href='../css/style.css' />
   <title>GameRec</title>
 </head>
 
@@ -39,11 +38,13 @@
         </ul>
         <div class="d-flex">
           {{#if logged_in}}
-          <div class="input-group rounded">
+          <div class="ui-widget input-group">
             <i class="bi bi-search"></i>
-            <input id="searchBar" type="search" class="form-control rounded" placeholder="Search by game title"
-              aria-label="Search" aria-describedby="search-addon" />
+            <input id="tags" type="search" class="form-control rounded searchbar" placeholder="Search by game title">
           </div>
+
+          <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+          <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
           <a class="btn btn-primary btn-custom" href="/profile">Profile</a> |
           <a class="btn btn-primary btn-custom" id="logout" href="/">Logout</a>
           {{else}}
@@ -62,17 +63,29 @@
         <a class="btn btn-primary btn-custom" href="/about-us" type="button">About us</a>
       </div>
 
-      <div class="d-flex">
+      <div class='d-flex'>
         {{#if logged_in}}
-        <div class="input-group rounded">
-          <i class="bi bi-search"></i>
-          <input id="searchBar" type="search" class="form-control rounded" placeholder="Search by game title"
-            aria-label="Search" aria-describedby="search-addon" />
+        <div class='input-group rounded'>
+          <i class='bi bi-search'></i>
+          <input id='searchBar' type='search' class='form-control rounded' placeholder='Search by game title'
+            aria-label='Search' aria-describedby='search-addon' />
+          <script>
+            $(function () {
+              var availableTags = ["ActionScript",
+                "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure", "COBOL",
+                "ColdFusion", "Erlang", "Fortran", "Groovy", "Haskell", "Java",
+                "JavaScript", "Lisp", "Perl", "PHP", "Python", "Ruby", "Scala",
+                "Scheme"]; $("#tags").autocomplete({
+                  source: availableTags
+                });
+            });
+          </script>
         </div>
-        <a class="btn btn-primary btn-custom" href="/profile">Profile</a> |
-        <a class="btn btn-primary btn-custom" id="logout" href="/">Logout</a>
+        <a class='btn btn-primary btn-custom' href='/profile'>Profile</a>
+        |
+        <a class='btn btn-primary btn-custom' id='logout' href='/'>Logout</a>
         {{else}}
-        <a class="btn btn-primary btn-custom" href="/login" type="button">Login</a>
+        <a class='btn btn-primary btn-custom' href='/login' type='button'>Login</a>
         {{/if}}
       </div>
     </nav>
@@ -88,18 +101,19 @@
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top footer">
         <p class="col-md-4 mb-0 text-muted">&copy; 2022 Group 7, Inc</p>
 
-        <a href="/"
-          class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <i class="bi bi-controller"></i>
+        <a href='/'
+          class='col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none'>
+          <i class='bi bi-controller'></i>
         </a>
 
-        <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        <ul class='nav col-md-4 justify-content-end'>
+          <li class='nav-item'><a href='/' class='nav-link px-2 text-muted'>Home</a></li>
+          <li class='nav-item'><a href='#' class='nav-link px-2 text-muted'>Features</a></li>
+          <li class='nav-item'><a href='#' class='nav-link px-2 text-muted'>About</a></li>
         </ul>
       </footer>
     </div>
+  </div>
   </div>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
@@ -110,6 +124,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <script src="./js/search-bar.js"></script>
+
 
 </body>
 

@@ -18,6 +18,14 @@ body {
     padding-right: 10px;
 } */
 
+ul.ui-autocomplete {
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    color: white;
+    list-style: none;
+}
+
 .bg-custom-2 {
     background-image: linear-gradient(to right,#000000 0%, #3b4949 100%);
 }
