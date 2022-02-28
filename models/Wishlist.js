@@ -4,26 +4,39 @@ const sequelize = require('../config/connection');
 class Wishlist extends Model {}
 
 Wishlist.init(
-    {
-        wishlistId: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            primaryKey: true,
-            autoIncrement: true, 
-        },
-        game_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
-        
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'wishlist'
-    }
-)
+    game_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'game',
+        key: 'id',
+        unique: false,
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+        unique: false,
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'wishlist',
+  }
+);
 
 module.exports = Wishlist;
