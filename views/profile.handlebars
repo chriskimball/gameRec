@@ -9,7 +9,7 @@
     <h2 style="text-align: center;">{{name}}</h2>
     <a class="btn btn-secondary btn-lg profile-btn" href="#" type="button">My Games</a>
     <a class="btn btn-secondary btn-lg" href="#wishlist" type="button">Wishlist</a>
-    <a class="btn btn-secondary btn-lg" href="#gameReviews" type="button">Game Reviews</a>
+    <a class="btn btn-secondary btn-lg" href="#gameReviews" type="button">My Reviews</a>
   </aside>
 
   <main class="col-lg">
@@ -56,119 +56,72 @@
     <div class="row">
       {{!-- My Games --}}
       <h2 class="text-center game-title">My Games</h2>
+      {{!-- loop my games here --}}
       <div class="d-flex flex-wrap justify-content-evenly center">
-        {{#each games as |game|}}
+        {{!-- {{#each games as |game|}} --}}
             <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1"
                 style="width: 18rem;">
                 <div class="mx-auto">
-                    <a href="/games/{{game.id}}">
+                    <a href="#">
                         <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
-                            src="{{game.game_image}}">
+                            src="#">
                     </a>
                 </div>
                 <div class="card-body mx-auto">
-                    <h3 class="card-title games-title">{{game.game_name}}</h3>
-                    <h6>{{game.short_description}}</h6>
-                    <p><span class="text-warning">Average Rating: {{game.averageReview}}</span><br> Reviews:
-                        {{game.totalReviews}}</p>
+                    <h3 class="card-title games-title">game title</h3>
+                    <h6>short game discription</h6>
+                    <p><span class="text-warning">Average Rating: </span><br> Reviews:
+                        (total count)</p>
                 </div>
             </div>
-            {{/each}}
+            {{!-- {{/each}} --}}
       </div>
       {{!-- Wishlist accordian --}}
       <h2 class="text-center game-title">Wishlist</h2>
       <div id="wishlist">
         <div class="accordion accordion-flush" id="accordionFlushExample">
+          {{!-- each accordian item to be looped in = games added to wishlist --}}
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed bg-custom-2 text-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Accordion Item #1
+                Game title
               </button>
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
               data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-               accordion-flush class. This is the first item's accordion body.</div>
+              <div class="accordion-body bg-dark">
+                <p>short game discription</p>
+                <p>platforms</p>
+                <p>average rating: <br>Reviews (total count)</p>
+                <a>Link to game/:id</a>
+              </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Accordion Item #2
-              </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being
-                filled with some actual content.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Accordion Item #3
-              </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-                happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.</div>
-            </div>
+          {{!--end of each individual accordian item  --}}
           </div>
         </div>
       </div>
       {{!-- end of Wishlist accordian --}}
+      {{!-- My Games --}}
+      <h2  id= "gameReviews"class="text-center game-title">My Reviews</h2>
+      <div class="d-flex flex-wrap justify-content-evenly center">
+        {{!-- {{#each games as |game|}} --}}
+            <div class="card text-white bg-custom-2 m-3 border border-secondary border-1"
+                style="width: 18rem;">
+                <div class="card-body mx-auto">
+                    <h3 class="card-title games-title">game title</h3>
+                    <p class="text-warning">Rating: {insert game rating}</p>
+                    <p class="text-start m-1">user review text</p>                    
+                </div>
+            </div>
+            {{!-- {{/each}} --}}
+      </div>
     </div>
   </main>
 </div>
 
 
 
-{{!-- <div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Project:</h3>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div> --}}
 
 <script src="/js/profile.js"></script>
