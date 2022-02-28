@@ -25,7 +25,7 @@
                 </div>
                 {{!-- Single game image banner --}}
                 <div class="game-banner">
-                    <img src="{{games.game_image}}" alt=" "
+                    <img src="{{games.game_image}}" alt="stock image of {{games.game_name}}"
                         class="d-block w-100 center border border-5 border-secondary">
                 </div>
                 <div class="row flex-wrap single-game-sub-body">
@@ -52,7 +52,9 @@
                         {{!-- test review --}}
                         {{#each games.reviews as |review|}}
                         <div class=" bg-custom-2 border border-secondary border-1 m-1">
-                            <div class="m-1">{{review.review_text}} <br> Rating: {{review.rating}}</div>
+                            <div class="m-1">{{review.review_text}} -- {{review.user.name}} -- {{format_date review.date_created}}
+                            <br> Platform: {{review.platform}}
+                            <br> Rating: {{review.rating}}</div>
                         </div>
                         {{/each}}
                         
