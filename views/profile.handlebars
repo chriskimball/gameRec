@@ -78,6 +78,24 @@
       </div>
       {{!-- Wishlist accordian --}}
       <h2 class="text-center game-title">Wishlist</h2>
+      <div class="d-flex flex-wrap justify-content-evenly center">
+        {{#each user.wishlists as |wishlist|}}
+        <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
+          <div class="mx-auto">
+              <a href="/game/{{wishlist.game.id}}">
+                  <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
+                      src="{{wishlist.game.game_image}}">
+              </a>
+          </div>
+          <div class="card-body mx-auto">
+            <h3 class="card-title games-title">{{wishlist.game.game_name}}</h3>
+            <h6>{{wishlist.game.short_description}}</h6>
+                {{!-- <p><span class="text-warning">Average Rating: </span><br> Reviews:
+                    (total count)</p> --}}
+            
+          </div>
+        </div>
+        {{/each}}
       <div id="wishlist">
         <div class="accordion accordion-flush" id="accordionFlushExample">
           {{!-- each accordian item to be looped in = games added to wishlist --}}
