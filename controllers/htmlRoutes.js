@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { render } = require('express/lib/response');
+// const { render } = require('express/lib/response');
 const sequelize = require('../config/connection');
 const { User, Game, UserGames, Review } = require('../models');
 const withAuth = require('../utils/auth');
@@ -24,13 +24,64 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Game, through: UserGames }],
+      include: [
+        { model: Game, through: UserGames },
+        {
+          model: Review,
+          include: {
+            model: Game,
+          },
+        },
+      ],
+      // attributes: {
+      //   include: [
+      //     [
+      //       // Use plain SQL to add up the total mileage
+      //       sequelize.literal(
+      //         '(SELECT COUNT(*) FROM review WHERE review.game_id = game.id)'
+      //       ),
+      //       'totalReviews',
+      //     ],
+      //     [
+      //       // Use plain SQL to add up the total mileage
+      //       sequelize.literal(
+      //         '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = game.id)'
+      //       ),
+      //       'averageReview',
+      //     ],
+      //   ],
+      // },
     });
 
+    // const gameData = await UserGames.findAll({
+    //   include: [{ model: Game } , { model: User, through: UserGames}],
+    //   // where: users.id: req.session.id,
+    //   // attributes: {
+    //   //   include: [
+    //   //     [
+    //   //       // Use plain SQL to add up the total mileage
+    //   //       sequelize.literal(
+    //   //         '(SELECT COUNT(*) FROM review WHERE review.game_id = game.id)'
+    //   //       ),
+    //   //       'totalReviews',
+    //   //     ],
+    //   //     [
+    //   //       // Use plain SQL to add up the total mileage
+    //   //       sequelize.literal(
+    //   //         '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = game.id)'
+    //   //       ),
+    //   //       'averageReview',
+    //   //     ],
+    //   //   ],
+    //   // },
+    // });
+
+    // const games = gameData.map((game) => game.get({ plain: true }));
+    // console.log(games);
     const user = userData.get({ plain: true });
     console.log(user);
     res.render('profile', {
-      ...user,
+      user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -79,7 +130,7 @@ router.get('/games', withAuth, async (req, res) => {
           [
             // Use plain SQL to add up the total mileage
             sequelize.literal(
-              '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = game.id)'
+              '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM review WHERE review.game_id = game.id)'
             ),
             'averageReview',
           ],
@@ -104,7 +155,17 @@ router.get('/games/:id', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const gameData = await Game.findByPk(req.params.id, {
-      include: [{ model: Review }, { model: User, through: UserGames }],
+      include: [
+        {
+          model: Review,
+          include: [
+            {
+              model: User,
+            },
+          ],
+        },
+        { model: User, through: UserGames},
+      ],
       attributes: {
         include: [
           [
@@ -115,7 +176,7 @@ router.get('/games/:id', withAuth, async (req, res) => {
           ],
           [
             sequelize.literal(
-              `(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = ${req.params.id})`
+              `(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM review WHERE review.game_id = ${req.params.id})`
             ),
             'averageReview',
           ],

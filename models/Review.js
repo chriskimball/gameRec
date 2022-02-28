@@ -19,7 +19,12 @@ Review.init(
     },
     review_text: {
       type: DataTypes.TEXT('tiny')
-    }
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,

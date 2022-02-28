@@ -7,7 +7,7 @@
 <div class="row p-1 m-1 section col-lg">
   <aside class="d-flex flex-column col-lg-3">
     <h2 style="text-align: center;">{{name}}</h2>
-    <a class="btn btn-secondary btn-lg profile-btn" href="#" type="button">My Games</a>
+    <a class="btn btn-secondary btn-lg profile-btn" href="#myGames" type="button">My Games</a>
     <a class="btn btn-secondary btn-lg" href="#wishlist" type="button">Wishlist</a>
     <a class="btn btn-secondary btn-lg" href="#gameReviews" type="button">My Reviews</a>
   </aside>
@@ -55,26 +55,26 @@
     </div>
     <div class="row">
       {{!-- My Games --}}
-      <h2 class="text-center game-title">My Games</h2>
+      <h2 id="myGames" class="text-center game-title">My Games</h2>
       {{!-- loop my games here --}}
       <div class="d-flex flex-wrap justify-content-evenly center">
-        {{!-- {{#each games as |game|}} --}}
-            <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1"
-                style="width: 18rem;">
-                <div class="mx-auto">
-                    <a href="#">
-                        <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
-                            src="#">
-                    </a>
-                </div>
-                <div class="card-body mx-auto">
-                    <h3 class="card-title games-title">game title</h3>
-                    <h6>short game discription</h6>
-                    <p><span class="text-warning">Average Rating: </span><br> Reviews:
-                        (total count)</p>
-                </div>
-            </div>
-            {{!-- {{/each}} --}}
+        {{#each user.games as |game|}}
+        <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
+          <div class="mx-auto">
+              <a href="/game/{{game.id}}">
+                  <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
+                      src="{{game.game_image}}">
+              </a>
+          </div>
+          <div class="card-body mx-auto">
+            <h3 class="card-title games-title">{{game.game_name}}</h3>
+            <h6>{{game.short_description}}</h6>
+                {{!-- <p><span class="text-warning">Average Rating: </span><br> Reviews:
+                    (total count)</p> --}}
+            
+          </div>
+        </div>
+        {{/each}}
       </div>
       {{!-- Wishlist accordian --}}
       <h2 class="text-center game-title">Wishlist</h2>
@@ -106,16 +106,18 @@
       {{!-- My Games --}}
       <h2  id= "gameReviews"class="text-center game-title">My Reviews</h2>
       <div class="d-flex flex-wrap justify-content-evenly center">
-        {{!-- {{#each games as |game|}} --}}
+        {{#each user.reviews as |review|}}
+          
             <div class="card text-white bg-custom-2 m-3 border border-secondary border-1"
                 style="width: 18rem;">
                 <div class="card-body mx-auto">
-                    <h3 class="card-title games-title">game title</h3>
-                    <p class="text-warning">Rating: {insert game rating}</p>
-                    <p class="text-start m-1">user review text</p>                    
+                    <a href="/games/{{review.game_id}}"><h3 class="card-title games-title">{{review.game.game_name}}</h3></a>
+                    <p class="text-warning">Rating: {{review.rating}}</p>
+                    <p class="text-start m-1">{{review.review_text}}</p>                    
                 </div>
             </div>
-            {{!-- {{/each}} --}}
+           
+            {{/each}}
       </div>
     </div>
   </main>
