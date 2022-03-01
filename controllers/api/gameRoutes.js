@@ -16,7 +16,7 @@ router.post('/:id', withAuth, async (req, res) => {
   }
 });
 
-// '/api/games/wishlist/:id' - Adds game to user's wishlistnpm 
+// '/api/games/wishlist/:id' - Adds game to user's wishlistnpm
 router.post('/wishlist/:id', withAuth, async (req, res) => {
   try {
     const wishlistData = await Wishlist.create({
@@ -32,7 +32,6 @@ router.post('/wishlist/:id', withAuth, async (req, res) => {
 
 // '/api/games/wishlist/:id' - Deletes game to user's wishlist
 router.delete('/wishlist/:id', withAuth, async (req, res) => {
-
   try {
     const wishlistData = await Wishlist.destroy({
       where: {

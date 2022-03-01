@@ -38,51 +38,8 @@ router.get('/profile', withAuth, async (req, res) => {
           },
         },
       ],
-      // attributes: {
-      //   include: [
-      //     [
-      //       // Use plain SQL to add up the total mileage
-      //       sequelize.literal(
-      //         '(SELECT COUNT(*) FROM review WHERE review.game_id = game.id)'
-      //       ),
-      //       'totalReviews',
-      //     ],
-      //     [
-      //       // Use plain SQL to add up the total mileage
-      //       sequelize.literal(
-      //         '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = game.id)'
-      //       ),
-      //       'averageReview',
-      //     ],
-      //   ],
-      // },
     });
 
-    // const gameData = await UserGames.findAll({
-    //   include: [{ model: Game } , { model: User, through: UserGames}],
-    //   // where: users.id: req.session.id,
-    //   // attributes: {
-    //   //   include: [
-    //   //     [
-    //   //       // Use plain SQL to add up the total mileage
-    //   //       sequelize.literal(
-    //   //         '(SELECT COUNT(*) FROM review WHERE review.game_id = game.id)'
-    //   //       ),
-    //   //       'totalReviews',
-    //   //     ],
-    //   //     [
-    //   //       // Use plain SQL to add up the total mileage
-    //   //       sequelize.literal(
-    //   //         '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = game.id)'
-    //   //       ),
-    //   //       'averageReview',
-    //   //     ],
-    //   //   ],
-    //   // },
-    // });
-
-    // const games = gameData.map((game) => game.get({ plain: true }));
-    // console.log(games);
     const user = userData.get({ plain: true });
     console.log(user);
     res.render('profile', {
