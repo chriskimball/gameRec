@@ -17,6 +17,7 @@ SO I CAN determine which game I should play next.
     -[Installation](#installation)
     -[Usage](#usage)
     -[Deployment Link] (#deployed)
+    -[App Mock-up](#app-mock-up)
     -[Future Development] (#future)
     -[License](#license)
     
@@ -28,6 +29,20 @@ Access application through the deployment link.
 # Usage
 
 In order to access games and their accompanying ratings and reviews, a user must sign up with a GameRec account.
+
+# App Mock-Up
+
+Desktop 1
+![GameRec Desktop Screenshot 1](./public/images/Screenshot-Desktop-1.gif)
+
+Desktop 2
+![GameRec Desktop Screenshot 2](./public/images/Screenshot-Desktop-2.gif)
+
+Mobile 1
+![GameRec Mobile Screenshot 1](./public/images/Screenshot-Mobile-1.gif)
+
+Mobile 2
+![GameRec Mobile Screenshot 2](./public/images/Screenshot-Mobile-2.gif)
 
 # Deployed Link
 [Deployed Page Link](https://gamrec-project.herokuapp.com/)
