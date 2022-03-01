@@ -1,3 +1,4 @@
+// Function to handle search bar.
 $(function () {
   var availableTags = [
     { value: '/games/1', label: 'Grand Theft Auto V',},

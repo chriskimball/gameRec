@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// const { render } = require('express/lib/response');
 const sequelize = require('../config/connection');
 const { User, Game, UserGames, Review, Wishlist } = require('../models');
 const withAuth = require('../utils/auth');
@@ -40,6 +39,19 @@ router.get('/profile', withAuth, async (req, res) => {
       ],
     });
 
+    // const wishlistData = await Wishlist.findAll({
+    //   // include: [
+    //   //   { model: Game, through: UserGames },
+    //   //   {
+    //   //     model: Review,
+    //   //     include: {
+    //   //       model: Game,
+    //   //     },
+    //   //   },
+    //   // ],
+    // });
+    // const wishlist = wishlistData.get({plain:true});
+    // console.log(wishlist);
     const user = userData.get({ plain: true });
     console.log(user);
     res.render('profile', {
@@ -82,14 +94,12 @@ router.get('/games', withAuth, async (req, res) => {
       attributes: {
         include: [
           [
-            // Use plain SQL to add up the total mileage
             sequelize.literal(
               '(SELECT COUNT(*) FROM review WHERE review.game_id = game.id)'
             ),
             'totalReviews',
           ],
           [
-            // Use plain SQL to add up the total mileage
             sequelize.literal(
               '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM review WHERE review.game_id = game.id)'
             ),
@@ -110,7 +120,6 @@ router.get('/games', withAuth, async (req, res) => {
   }
 });
 
-// TODO: Need to validate this route works
 // '/games/:id' - Where the user can see a specific game
 router.get('/games/:id', withAuth, async (req, res) => {
   try {
