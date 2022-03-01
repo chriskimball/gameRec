@@ -1,9 +1,6 @@
 $(function () {
   var availableTags = [
-    {
-      value: 'https://gamrec/project.herokuapp.com/games/1',
-      label: 'Grand Theft Auto V',
-    },
+    { value: '/games/1', label: 'Grand Theft Auto V',},
     { value: '/games/2', label: 'The Witcher 3: Wild Hunt' },
     { value: '/games/3', label: 'Portal 2' },
     { value: '/games/4', label: 'The Elder Scrolls V: Skyrim' },
