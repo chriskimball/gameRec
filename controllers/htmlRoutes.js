@@ -169,7 +169,9 @@ router.get('/games/:id', withAuth, async (req, res) => {
 });
 
 router.get('/about-us', async (req, res) => {
-  res.render('about-us');
+  res.render('about-us', {
+    logged_in: true,
+  });
 });
 
 module.exports = router;
