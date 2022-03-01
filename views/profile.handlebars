@@ -6,7 +6,7 @@
 
 <div class="row p-1 m-1 section col-lg">
   <aside class="d-flex flex-column col-lg-3">
-    <h2 style="text-align: center;">{{name}}</h2>
+    <h2 style="text-align: center;">{{user.name}}</h2>
     <a class="btn btn-secondary btn-lg profile-btn" href="#myGames" type="button">My Games</a>
     <a class="btn btn-secondary btn-lg" href="#wishlist" type="button">Wishlist</a>
     <a class="btn btn-secondary btn-lg" href="#gameReviews" type="button">My Reviews</a>
@@ -61,7 +61,7 @@
         {{#each user.games as |game|}}
         <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
           <div class="mx-auto">
-              <a href="/game/{{game.id}}">
+              <a href="/games/{{game.id}}">
                   <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
                       src="{{game.game_image}}">
               </a>
@@ -82,7 +82,7 @@
         {{#each user.wishlists as |wishlist|}}
         <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
           <div class="mx-auto">
-              <a href="/game/{{wishlist.game.id}}">
+              <a href="/games/{{wishlist.game.id}}">
                   <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
                       src="{{wishlist.game.game_image}}">
               </a>
@@ -96,29 +96,7 @@
           </div>
         </div>
         {{/each}}
-      <div id="wishlist">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-          {{!-- each accordian item to be looped in = games added to wishlist --}}
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed bg-custom-2 text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Game title
-              </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body bg-dark">
-                <p>short game discription</p>
-                <p>platforms</p>
-                <p>average rating: <br>Reviews (total count)</p>
-                <a>Link to game/:id</a>
-              </div>
-            </div>
-          </div>
-          {{!--end of each individual accordian item  --}}
-          </div>
-        </div>
+      
       </div>
       {{!-- end of Wishlist accordian --}}
       {{!-- My Games --}}

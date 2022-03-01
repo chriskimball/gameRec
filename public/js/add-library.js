@@ -10,7 +10,19 @@ const addToGameLibraryHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace(`/games/${gameId}`);
+      try {
+        const response = await fetch(`/api/games/wishlist/${gameId}`, {
+          method: 'DELETE',
+          body: JSON.stringify({}),
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+          document.location.replace(`/games/${gameId}`);
+        }
+      } catch (err) {
+        console.error(err);
+      }
     }
   } catch (err) {
     console.error(err);
@@ -28,12 +40,16 @@ const addToGameWishlistHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace(`/games/${gameId}`);
+      document.location.replace(`/profile`);
     }
   } catch (err) {
     console.error(err);
   }
 };
 
-document.querySelector('#add-to-library').addEventListener('click', addToGameLibraryHandler);
-document.querySelector('#add-to-wishlist').addEventListener('click', addToGameWishlistHandler);
+document
+  .querySelector('#add-to-library')
+  .addEventListener('click', addToGameLibraryHandler);
+document
+  .querySelector('#add-to-wishlist')
+  .addEventListener('click', addToGameWishlistHandler);
