@@ -68,7 +68,7 @@
           </div>
           <div class="card-body mx-auto">
             <h3 class="card-title games-title">{{game.game_name}}</h3>
-            <h6>{{game.short_description}}</h6>
+            <h6 class="text-start">{{game.short_description}}</h6>
           </div>
         </div>
         {{/each}}
@@ -86,7 +86,7 @@
           </div>
           <div class="card-body mx-auto">
             <h3 class="card-title games-title">{{wishlist.game.game_name}}</h3>
-            <h6>{{wishlist.game.short_description}}</h6>
+            <h6 class="text-start">{{wishlist.game.short_description}}</h6>
           </div>
         </div>
         {{/each}}
@@ -97,21 +97,20 @@
       <h2  id= "gameReviews"class="text-center game-title">My Reviews</h2>
       <div class="d-flex flex-wrap justify-content-evenly center">
         {{#each user.reviews as |review|}}
-            <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
-          <div class="mx-auto">
-              <a href="/games/{{review.game_id}}">
-                  <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
-                      src="{{review.game.game_image}}">
-              </a>
+          <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
+            <div class="mx-auto">
+                <a href="/games/{{review.game_id}}">
+                    <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
+                        src="{{review.game.game_image}}">
+                </a>
+            </div>
+            <div class="card-body mx-auto">
+              <h3 class="card-title games-title">{{review.game.game_name}}</h3>
+              <p class="text-warning">Rating: {{review.rating}}</p>
+              <p class="text-start m-1">{{review.review_text}}</p>  
+            </div>
           </div>
-          <div class="card-body mx-auto">
-            <h3 class="card-title games-title">{{review.game.game_name}}</h3>
-            <p class="text-warning">Rating: {{review.rating}}</p>
-            <p class="text-start m-1">{{review.review_text}}</p>  
-          </div>
-        
-           
-            {{/each}}
+          {{/each}}
       </div>
     </div>
   </main>
