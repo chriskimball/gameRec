@@ -11,15 +11,15 @@ Wishlist.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    game_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'game',
-        key: 'id',
-        unique: false,
-      },
-    },
+    // game_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'game',
+    //     key: 'id',
+    //     unique: false,
+    //   },
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

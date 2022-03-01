@@ -1,3 +1,4 @@
+// Function to handle adding a review to a game.
 const reviewFormHandler = async (event) => {
   event.preventDefault();
 
@@ -25,4 +26,5 @@ const reviewFormHandler = async (event) => {
   }
 };
 
+// Event Listeners for buttons.
 document.querySelector('#review-form').addEventListener('submit', reviewFormHandler);
