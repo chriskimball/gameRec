@@ -250,6 +250,15 @@ ul.ui-autocomplete {
     position: relative; 
 }
 
+.profile-emmanuel{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://ca.slack-edge.com/T02J421BFLY-U02JEJM7J12-b534a607f8b3-72");
+    height: 250px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+}
+
 .aboutus-header {
     color: #20c997;
     font-family: 'Orbitron', sans-serif;
