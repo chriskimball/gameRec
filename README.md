@@ -5,6 +5,10 @@
 
 # Discription
 This application is centered around video games and recommending them based on ratings and reviews.
+- User Story
+I AM A Game enthusiast who is seeking game recommendations
+SO I WANT TO see reviews of games
+SO I CAN determine which game I should play next.
 
 # Table of Contents
 
@@ -26,10 +30,15 @@ Access application through the deployment link.
 In order to access games and their accompanying ratings and reviews, a user must sign up with a GameRec account.
 
 # Deployed Link
-[Deployed Page Link]()
+[Deployed Page Link](https://gamrec-project.herokuapp.com/)
 
 # Future Development
-- 
+- Find games based on genre, popularity/review scored, and or platform
+- Ability to remove a game/review from user library
+- Chat feature based on a specific game
+- See upcoming game releases
+- User polls (example: What games are you looking forward to playing?)
+
 
 # License
 
