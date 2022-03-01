@@ -3,7 +3,7 @@
     "id": 1,
     "game_name": "Grand Theft Auto V",
     "game_summary": "Extended Game Description goes here",
-    "short_description": "Short Description goes here",
+    "short_description": "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions—linear scenarios with set objectives—to progress through the story. Outside of the missions, players may freely roam the open world.",
     "release_date": "2013-09-17",
     "game_image": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "game_name": "Portal 2",
     "game_summary": "Extended Game Description goes here",
-    "short_description": "Short Description goes here",
+    "short_description": "Portal 2 is a first-person perspective puzzle game. The player takes the role of Chell in the single-player campaign, as one of two robots—Atlas and P-Body—in the cooperative campaign, or as a simplistic humanoid icon in community-developed puzzles. These three characters can explore and interact with the environment.",
     "release_date": "2011-04-18",
     "game_image": "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "game_name": "The Elder Scrolls V: Skyrim",
     "game_summary": "Extended Game Description goes here",
-    "short_description": "Short Description goes here",
+    "short_description": "The Elder Scrolls V: Skyrim is an action role-playing game, playable from either a first or third-person perspective. The player may freely roam over the land of Skyrim—an open world environment consisting of wilderness expanses, dungeons, caves, cities, towns, fortresses, and villages.",
     "release_date": "2011-11-11",
     "game_image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "game_name": "Counter-Strike: Global Offensive",
     "game_summary": "Extended Game Description goes here",
-    "short_description": "Short Description goes here",
+    "short_description": "The game pits two teams, Terrorists and Counter-Terrorists, against each other in different objective-based game modes. The most common game modes involve the Terrorists planting a bomb while Counter-Terrorists attempt to stop them, or Counter-Terrorists attempting to rescue hostages that the Terrorists have captured.",
     "release_date": "2012-08-21",
     "game_image": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "game_name": "Left 4 Dead 2",
     "game_summary": "Extended Game Description goes here",
-    "short_description": "Short Description goes here",
+    "short_description": "Left 4 Dead 2 is a single-player and multiplayer co-operative survival horror first person shooter game developed by Valve Corporation. It is the sequel to Left 4 Dead. It was first announced on June 1, 2009 by Valve Corporation at Microsoft's E3 2009 press conference.",
     "release_date": "2009-11-17",
     "game_image": "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg"
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "game_name": "BioShock Infinite",
     "game_summary": "Extended Game Description goes here",
-    "short_description": "Short Description goes here",
+    "short_description": "BioShock Infinite is set in 1912 and takes place in a fictional steampunk city-state called Columbia—named in homage to the female personification of the United States—which is suspended in the air through a combination of giant blimps, balloons, reactors, propellers, and quantum levitation.",
     "release_date": "2013-03-26",
     "game_image": "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "game_name": "Borderlands 2",
     "game_summary": "Extended Game Description goes here",
-    "short_description": "Short Description goes here",
+    "short_description": "The story follows a new group of Vault Hunters who must ally with the Crimson Raiders, a resistance group made up of civilian survivors and guerrilla fighters, to defeat the tyrannical Handsome Jack before he can unlock the power of a new Vault.",
     "release_date": "2012-09-18",
     "game_image": "https://media.rawg.io/media/games/588/588c6bdff3d4baf66ec36b1c05b793bf.jpg"
   }
