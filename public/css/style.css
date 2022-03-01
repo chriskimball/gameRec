@@ -250,6 +250,15 @@ ul.ui-autocomplete {
     position: relative; 
 }
 
+.profile-emmanuel{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://ca.slack-edge.com/T02J421BFLY-U02JEJM7J12-b534a607f8b3-72");
+    height: 250px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+}
+
 .profile-vanessa {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://ca.slack-edge.com/T02J421BFLY-U02J5LELU9L-aaa8816700ba-512");
     height: 250px;
