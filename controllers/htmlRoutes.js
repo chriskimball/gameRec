@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // const { render } = require('express/lib/response');
 const sequelize = require('../config/connection');
-const { User, Game, UserGames, Review } = require('../models');
+const { User, Game, UserGames, Review, Wishlist } = require('../models');
 const withAuth = require('../utils/auth');
 
 // '/' - Home page - basic info about the app
@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// TODO: Need to validate this route works
 // '/profile' - Where the user sees their profile information and games in their collection
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -27,57 +26,20 @@ router.get('/profile', withAuth, async (req, res) => {
       include: [
         { model: Game, through: UserGames },
         {
+          model: Wishlist,
+          include: {
+            model: Game,
+          },
+        },
+        {
           model: Review,
           include: {
             model: Game,
           },
         },
       ],
-      // attributes: {
-      //   include: [
-      //     [
-      //       // Use plain SQL to add up the total mileage
-      //       sequelize.literal(
-      //         '(SELECT COUNT(*) FROM review WHERE review.game_id = game.id)'
-      //       ),
-      //       'totalReviews',
-      //     ],
-      //     [
-      //       // Use plain SQL to add up the total mileage
-      //       sequelize.literal(
-      //         '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = game.id)'
-      //       ),
-      //       'averageReview',
-      //     ],
-      //   ],
-      // },
     });
 
-    // const gameData = await UserGames.findAll({
-    //   include: [{ model: Game } , { model: User, through: UserGames}],
-    //   // where: users.id: req.session.id,
-    //   // attributes: {
-    //   //   include: [
-    //   //     [
-    //   //       // Use plain SQL to add up the total mileage
-    //   //       sequelize.literal(
-    //   //         '(SELECT COUNT(*) FROM review WHERE review.game_id = game.id)'
-    //   //       ),
-    //   //       'totalReviews',
-    //   //     ],
-    //   //     [
-    //   //       // Use plain SQL to add up the total mileage
-    //   //       sequelize.literal(
-    //   //         '(SELECT CAST(AVG(review.rating) AS DECIMAL(10,1)) FROM rl2do9gnzmz9fhm9.review WHERE review.game_id = game.id)'
-    //   //       ),
-    //   //       'averageReview',
-    //   //     ],
-    //   //   ],
-    //   // },
-    // });
-
-    // const games = gameData.map((game) => game.get({ plain: true }));
-    // console.log(games);
     const user = userData.get({ plain: true });
     console.log(user);
     res.render('profile', {
@@ -111,7 +73,6 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-// TODO: Need to validate this route works
 // '/games' - Where the user sees all games in the library
 router.get('/games', withAuth, async (req, res) => {
   try {
@@ -164,7 +125,7 @@ router.get('/games/:id', withAuth, async (req, res) => {
             },
           ],
         },
-        { model: User, through: UserGames},
+        { model: User, through: UserGames },
       ],
       attributes: {
         include: [
