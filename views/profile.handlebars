@@ -69,53 +69,47 @@
           <div class="card-body mx-auto">
             <h3 class="card-title games-title">{{game.game_name}}</h3>
             <h6>{{game.short_description}}</h6>
-                {{!-- <p><span class="text-warning">Average Rating: </span><br> Reviews:
-                    (total count)</p> --}}
-            
           </div>
         </div>
         {{/each}}
       </div>
       {{!-- Wishlist accordian --}}
       <h2 class="text-center game-title">Wishlist</h2>
-      <div id="wishlist">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-          {{!-- each accordian item to be looped in = games added to wishlist --}}
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed bg-custom-2 text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Game title
-              </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body bg-dark">
-                <p>short game discription</p>
-                <p>platforms</p>
-                <p>average rating: <br>Reviews (total count)</p>
-                <a>Link to game/:id</a>
-              </div>
-            </div>
+      <div class="d-flex flex-wrap justify-content-evenly center">
+        {{#each user.wishlists as |wishlist|}}
+        <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
+          <div class="mx-auto">
+              <a href="/games/{{wishlist.game.id}}">
+                  <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
+                      src="{{wishlist.game.game_image}}">
+              </a>
           </div>
-          {{!--end of each individual accordian item  --}}
+          <div class="card-body mx-auto">
+            <h3 class="card-title games-title">{{wishlist.game.game_name}}</h3>
+            <h6>{{wishlist.game.short_description}}</h6>
           </div>
         </div>
+        {{/each}}
+      
       </div>
       {{!-- end of Wishlist accordian --}}
       {{!-- My Games --}}
       <h2  id= "gameReviews"class="text-center game-title">My Reviews</h2>
       <div class="d-flex flex-wrap justify-content-evenly center">
         {{#each user.reviews as |review|}}
-          
-            <div class="card text-white bg-custom-2 m-3 border border-secondary border-1"
-                style="width: 18rem;">
-                <div class="card-body mx-auto">
-                    <a href="/games/{{review.game_id}}"><h3 class="card-title games-title">{{review.game.game_name}}</h3></a>
-                    <p class="text-warning">Rating: {{review.rating}}</p>
-                    <p class="text-start m-1">{{review.review_text}}</p>                    
-                </div>
-            </div>
+            <div class="card text-white bg-custom-2 m-3 text-center border border-secondary border-1" style="width: 18rem;">
+          <div class="mx-auto">
+              <a href="/games/{{review.game_id}}">
+                  <img class="img-thumbnail my-2 mx-auto" style="width: 250px; height: 250px; object-fit: cover;"
+                      src="{{review.game.game_image}}">
+              </a>
+          </div>
+          <div class="card-body mx-auto">
+            <h3 class="card-title games-title">{{review.game.game_name}}</h3>
+            <p class="text-warning">Rating: {{review.rating}}</p>
+            <p class="text-start m-1">{{review.review_text}}</p>  
+          </div>
+        
            
             {{/each}}
       </div>
